@@ -24,6 +24,14 @@ export TOOLKIT_CLI_ENV=development
 
 rm -rf skip-prompt use-plugins use-presets
 
+rm -rf tmp
+node ../../packages/toolkit/bin/index.js create tmp \
+  --link \
+  --link-cli \
+  --presets='@carbon/cli-preset-ui-service'
+
+exit 0;
+
 # Skip
 node ../../packages/toolkit/bin/index.js create skip-prompt \
   --link \

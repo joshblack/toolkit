@@ -1,14 +1,19 @@
 'use strict';
 
-// const { load } = require('@carbon/cli-runtime');
-// const { NODE_ENV } = require('config');
-// const webpack = require('webpack');
+const { load } = require('@carbon/cli-runtime');
+const { NODE_ENV } = require('config');
+const webpack = require('webpack');
 
 module.exports = async server => {
+  if (NODE_ENV !== 'development') {
+    return server;
+  }
+
+  const { store } = load();
+  const config = store.read('webpack.config.development');
+  console.log(config);
+
   return server;
-  // if (NODE_ENV !== 'development') {
-  // return server;
-  // }
 
   // const { store } = await load();
   // const config = await store.read('webpack.config.development');

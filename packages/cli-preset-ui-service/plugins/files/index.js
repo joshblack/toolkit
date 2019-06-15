@@ -22,7 +22,5 @@ module.exports = ({ api }) => {
         start: 'cross-env NODE_ENV=production node src/server/index.js',
       },
     }));
-
-    await installDependencies(['cross-env']);
   });
 };

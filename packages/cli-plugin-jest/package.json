@@ -18,6 +18,6 @@
     "lodash.mergewith": "^4.6.1",
     "object-assign": "^4.1.1",
     "promise": "^8.0.1",
-    "whatwg-fetch": "^2.0.4"
+    "whatwg-fetch": "^3.0.0"
   }
 }

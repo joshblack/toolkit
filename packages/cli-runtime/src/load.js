@@ -67,6 +67,7 @@ function load({
     env,
     name,
     plugins,
+    store,
   };
 }
 

@@ -21,6 +21,13 @@ const middleware = [
   // Handle serving static assets provided through ASSET_PATH
   require('@carbon/server/middleware/static'),
 
+  server => {
+    server.use((req, res) => {
+      res.send('OK');
+    });
+    return server;
+  },
+
   // Handle generating HTML responses, serving static assets, and error handling
   require('@carbon/server/middleware/html')({
     getTitle: () => 'UI Toolkit Demo',
@@ -32,8 +39,8 @@ const middleware = [
       },
     }),
     addToHead: () => `
-<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono" rel="stylesheet">
-<style>body { font-family: 'IBM Plex Mono', monospace; }</style>`,
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono" rel="stylesheet">
+  <style>body { font-family: 'IBM Plex Mono', monospace; }</style>`,
   }),
 
   // Error handling so we don't pollute the response with stack traces
